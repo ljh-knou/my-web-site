@@ -1,0 +1,76 @@
+  /*
+      block level element
+      solid : 단선
+      div tag는 아무 의미가 없고 단지 디자인의 용도로만 쓰는 tag로 block level element이기 때문에 화면 전체를 쓰기 때문에 줄바꿈이 된다.
+      div와 같은 목적으로 사용하라고 고안된 tag가 하나 더 있는데 <span> tag이고 span은 inline element입니다. 
+      inline element는 새로운 줄을 만들지 않으며 필요한 너비만 차지
+            보통 인라인 요소는 데이터와 다른 인라인 요소만 포함할 수 있으며, 블록 요소는 포함할 수 없습니다.
+            기본적으로 인라인 요소는 문서 흐름에서 줄바꿈을 강제하지 않습니다. 반면 블록요소는 줄바꿈을 유발합니다.
+            블록레벨 요소는 언제나 새로운 줄에서 시작하고, 좌우 양쪽으로 최대한 늘어나 가능한 모든 너비를 차지합니다.
+            블록레벨 요소는 <body>요소 안에서만 나타날 수 있습니다.
+            일반적으로 블록 레벨 요소는 인라인 요소와 (때때로) 다른 블록 레벨 요소를 포함할 수 있습니다. 
+            이런 고유한 구조적 차이점으로 인해 블록 레벨 요소는 인라인 요소보다 더 "큰" 구조를 생성할 수 있습니다.
+      caniuse.com : 현재 CSS, javaScript를 지원하는 브라우저 정보를 얻을 수 있다.
+      tag와 tag사이의 여백 : margin
+      <ol><ul>부모tag로 <li> tag를 자식으로 갖는다.
+      <ol> : ordered List (numbering을 자동으로 해준다) -> 순서가 정해진 목록
+      <ul> : Unordered List                       -> 순서가 정해지지 않은 목록
+      <title><meta> : 본문(body)을 설명하는 tag로 <head></head>로 감싼다.
+      HTML에 있는 모든 tag는 <head>태그 또는 <body>태그 이 둘 중 하나 아래에 놓이게 된다. 이 <head>와 <body> tag를 감싸는 tag가 <html>tag이고
+      <html>tag위에 관용적으로 쓰이는  tag가 <!DocType html>이다.
+   */
+   body{
+   
+      margin:0px;
+   
+   }
+   
+   h1{
+      padding:20px;/* 콘텐츠와 테두리 사이의 간격 */
+      margin:0px; /*테두리와 테두리 사이의 간격 */
+      display:block; /*화면전체를 쓰는 block level*/
+      /*width : 100px; block의 폭을 지정*/
+      border-bottom:1px solid gray;
+      font-size  : 45px;
+      text-align : center;
+   }
+   ol {
+         border-right:1px solid gray;
+         width : 100px;
+         margin: 0px;
+         padding:20px; 
+      }
+       
+   a {
+          color : black;
+          text-decoration: none;
+     }  
+     
+   #grid{
+      display:grid; 
+      grid-template-columns:150px 1fr; /*첫번째 컬럼은 150px정도의 부피를 갖고  다른 데이터는 나머지 공간을 다 쓴다고 할 때  1fr이라고 한다. */
+      /* 1fr 1fr로 하면 두컬럼은 같은 크기를 가지게 된다. 2fr 1fr이라고 하면 총 3fr에서 2fr 크기와 1fr 크로 화면을 분할 한다. 화면을 자동으로 조절하는 단위가 fr이라고 생각하면 된다.*/
+   }
+   
+   #article{
+      padding-left:25px;
+   }
+   
+   #grid ol {
+      padding-left:33px;
+   }    
+   
+   @media(max-width:800px){
+    #grid{
+      display:block;
+     }
+    
+   ol {
+         border-right : none;
+      } 
+      
+   h1{
+      border-bottom:none;
+
+     }       
+   }
